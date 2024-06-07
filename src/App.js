@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/layout/Navbar';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
 import Search from './components/users/Search';
+import User from './components/users/User';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Search />} />
             <Route path="/about" element={<About />} />
+            <Route path="/user/:id" element={<User />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
