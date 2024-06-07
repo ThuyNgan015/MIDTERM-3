@@ -1,8 +1,10 @@
-import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/layout/Navbar";
-import Search from "./components/users/Search";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/layout/Navbar';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
+import Search from './components/users/Search';
 
 const App = () => {
   return (
@@ -10,9 +12,10 @@ const App = () => {
       <Router>
         <Navbar />
         <div className="container">
-          <h1>GitHub Users Data</h1>
           <Routes>
             <Route path="/" element={<Search />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </Router>
